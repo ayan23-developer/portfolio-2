@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayan Shekh | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --blue: #00d9ff;
+    --dark: #080b14;
+    --card: #111827;
+    --gray: #aab4c5;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--dark);
+    color: white;
+}
+
+/* NAVIGATION */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 20px 8%;
+    background: var(--dark);
+    border-bottom: 1px solid #263348;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.logo span, footer span {
+    color: var(--blue);
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav ul a:hover {
+    color: var(--blue);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 90vh;
+    padding: 70px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 650px;
+    animation: slideLeft 1s ease;
+}
+
+.tag {
+    color: var(--blue);
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero h2 {
+    color: #c4ccda;
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.hero p {
+    color: var(--gray);
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    background: var(--blue);
+    color: #080b14;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #00d9ff66;
+}
+
+.outline {
+    background: transparent;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+/* PROFILE */
+
+.profile {
+    width: 270px;
+    height: 270px;
+    min-width: 270px;
+    border: 3px solid var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #12304a, #080b14);
+    box-shadow: 0 0 40px #00d9ff55;
+    animation: float 3s infinite ease-in-out;
+}
+
+.profile span {
+    font-size: 85px;
+    font-weight: 800;
+    color: var(--blue);
+}
+
+/* COMMON SECTIONS */
+
+section:not(.hero) {
+    padding: 85px 10%;
+    text-align: center;
+}
+
+.section-tag {
+    color: var(--blue);
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+section h2 {
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+section h2 span {
+    color: var(--blue);
+}
+
+/* ABOUT */
+
+.card {
+    max-width: 850px;
+    margin: auto;
+    background: var(--card);
+    padding: 35px;
+    border: 1px solid #263348;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: var(--blue);
+    transform: translateY(-5px);
+}
+
+.card p {
+    color: var(--gray);
+    line-height: 2;
+    margin-bottom: 12px;
+}
+
+/* EDUCATION */
+
+.education h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.education h4 {
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+.year {
+    color: var(--blue);
+    margin-bottom: 15px;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.skill {
+    background: var(--card);
+    border: 1px solid #263348;
+    border-radius: 10px;
+    padding: 25px 10px;
+    transition: .3s;
+}
+
+.skill:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    transform: translateY(-5px);
+}
+
+.note {
+    color: var(--gray);
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+/* PROJECTS */
+
+.project-card {
+    max-width: 850px;
+    margin: auto;
+    padding: 30px;
+    background: var(--card);
+    border: 1px solid #263348;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.project-card:hover {
+    border-color: var(--blue);
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: var(--blue);
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact-card {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background: var(--card);
+    border: 1px solid #263348;
+    border-radius: 15px;
+}
+
+.contact-card p {
+    color: var(--gray);
+    margin: 15px 0 25px;
+}
+
+.email {
+    display: block;
+    color: var(--blue);
+    text-decoration: none;
+    margin: 0 0 25px;
+    word-break: break-word;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #05070d;
+    border-top: 1px solid #263348;
+}
+
+footer p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* ANIMATIONS */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul a {
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 60px 7%;
+    }
+
+    .profile {
+        width: 190px;
+        height: 190px;
+        min-width: 190px;
+    }
+
+    .profile span {
+        font-size: 60px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    section:not(.hero) {
+        padding: 65px 7%;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 400px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+<nav>
+    <div class="logo">AYAN<span>.</span></div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="tag">WELCOME TO MY PORTFOLIO</div>
+
+        <h1>Hi, I'm <span>Ayan Shekh</span></h1>
+
+        <h2>First Year Engineering Student</h2>
+
+        <p>
+            I am a passionate engineering student who loves
+            technology, creativity and innovation. I believe
+            in learning new things, improving my skills and
+            building a better future through technology.
+        </p>
+
+        <div class="buttons">
+            <a href="#about" class="btn">Explore My Profile</a>
+            <a href="#contact" class="btn outline">Contact Me</a>
+        </div>
+
+    </div>
+
+    <div class="profile">
+        <span>AS</span>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-tag">GET TO KNOW ME</div>
+
+    <h2>About <span>Me</span></h2>
+
+    <div class="card">
+
+        <p>
+            Hello! My name is Ayan Shekh. I am currently
+            pursuing my First Year (FY) engineering studies
+            at D. Y. Patil College of Engineering and Innovation.
+        </p>
+
+        <p>
+            I am interested in technology, engineering,
+            programming and innovation. I enjoy exploring
+            new ideas, learning new skills and challenging
+            myself to become better every day.
+        </p>
+
+        <p>
+            My goal is to become a skilled engineer and
+            contribute something meaningful to the world
+            through creativity and technology.
+        </p>
+
+    </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="section-tag">MY ACADEMIC JOURNEY</div>
+
+    <h2>My <span>Education</span></h2>
+
+    <div class="card education">
+
+        <div class="year">CURRENTLY STUDYING</div>
+
+        <h3>First Year Engineering (FY)</h3>
+
+        <h4>
+            D. Y. Patil College of Engineering and Innovation
+        </h4>
+
+        <p>
+            Learning the fundamentals of engineering,
+            developing technical knowledge and building
+            a strong foundation for my professional career.
+        </p>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-tag">MY ABILITIES</div>
+
+    <h2>My <span>Skills</span></h2>
+
+    <div class="skills-grid">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Problem Solving</div>
+        <div class="skill">Communication</div>
+        <div class="skill">Teamwork</div>
+        <div class="skill">Creative Thinking</div>
+    </div>
+
+    <p class="note">
+        Always learning, always improving.
+    </p>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="section-tag">MY WORK</div>
+
+    <h2>My <span>Projects</span></h2>
+
+    <div class="project-card">
+
+        <h3>Personal Portfolio Website</h3>
+
+        <p>
+            A personal portfolio website created using
+            HTML and CSS to showcase my introduction,
+            education, skills and professional journey.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-tag">LET'S CONNECT</div>
+
+    <h2>Contact <span>Me</span></h2>
+
+    <div class="contact-card">
+
+        <h3>Let's Learn and Grow Together!</h3>
+
+        <p>
+            I am always open to connecting with new people,
+            learning opportunities and exciting projects.
+        </p>
+
+        <a class="email"
+           href="mailto:ashaikh39001@gmail.com">
+           ashaikh39001@gmail.com
+        </a>
+
+        <a href="mailto:ashaikh39001@gmail.com" class="btn">
+            Email Me
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>AYAN<span>.</span></h3>
+
+    <p>Designed & Developed by Ayan Shekh</p>
+
+    <p>© 2026 Ayan Shekh | All Rights Reserved</p>
+
+</footer>
+
+</body>
+</html>
+
